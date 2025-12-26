@@ -1,0 +1,105 @@
+/* Основной контейнер */
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px 30px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Заголовок */
+h1 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Контролы фильтрации */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.controls div {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.controls input,
+.controls select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.controls button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #2980b9;
+}
+
+/* Информация о элементах */
+.info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.pipe-status {
+  font-weight: 600;
+  color: #27ae60;
+}
+
+/* Список элементов */
+.items-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.items-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.items-list li strong {
+  color: #2c3e50;
+}
+
+/* Сообщение при отсутствии результатов */
+.no-results {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ffd6d6;
+  color: #c0392b;
+  border-radius: 6px;
+  font-weight: 500;
+}

@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Фільтрація за допомогою кастомного пайпу</h1>
+
+  <div class="controls">
+    <div>
+      <label for="search">Пошук:</label>
+      <input
+        id="search"
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Введіть текст для пошуку..."
+      />
+    </div>
+
+    <div>
+      <label for="field">Поле для пошуку:</label>
+      <select id="field" [(ngModel)]="searchField">
+        <option value="name">Назва</option>
+        <option value="category">Категорія</option>
+        <option value="description">Опис</option>
+      </select>
+    </div>
+
+    <button (click)="addItem()">Додати новий елемент</button>
+  </div>
+
+  <div class="info">
+    <p><strong>Всього елементів:</strong> {{ items.length }}</p>
+    <p><strong>Знайдено:</strong> {{ (items | filterByField: searchField : searchText).length }}</p>
+    <p><strong>Пайп:</strong> <span class="pipe-status">Чистий (pure: true)</span></p>
+  <ul class="items-list">
+    <li *ngFor="let item of items | filterByField: searchField : searchText">
+      <strong>{{ item.name }}</strong> ({{ item.category }}) — {{ item.description }}
+    </li>
+  </ul>
+
+  <div *ngIf="(items | filterByField: searchField : searchText).length === 0" class="no-results">
+    Нічого не знайдено
+  </div>
+</div>
+
