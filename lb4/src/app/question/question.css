@@ -1,0 +1,35 @@
+.question {
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.question h3 {
+  margin: 0 0 15px;
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options li {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.options li.selected {
+  background-color: #e0e0e0;
+}
+
+.options li.correct {
+  background-color: #90ee90;
+}
+
+.options li.wrong {
+  background-color: #ffcccc;
+}
+

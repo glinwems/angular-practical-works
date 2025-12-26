@@ -1,0 +1,12 @@
+<div class="quiz">
+  <h2>Питання</h2>
+  <app-question 
+    [question]="currentQuestion"
+    (answerSelected)="onAnswerSelected($event)">
+  </app-question>
+  <button (click)="showAnswer()">Відповідь</button>
+  <div *ngIf="selectedAnswer !== null" class="selected-info">
+    Ви обрали: {{ currentQuestion.options[selectedAnswer] }}
+  </div>
+</div>
+

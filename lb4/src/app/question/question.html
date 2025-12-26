@@ -1,0 +1,14 @@
+<div class="question">
+  <h3>{{ question.text }}</h3>
+  <ul class="options">
+    <li 
+      *ngFor="let option of question.options; let i = index"
+      (click)="selectAnswer(i)"
+      [class.selected]="selectedAnswer === i"
+      [class.correct]="showCorrect && i === question.correctAnswer"
+      [class.wrong]="showCorrect && selectedAnswer === i && i !== question.correctAnswer">
+      {{ option }}
+    </li>
+  </ul>
+</div>
+
