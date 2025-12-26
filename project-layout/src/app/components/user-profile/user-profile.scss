@@ -1,0 +1,52 @@
+.user-profile {
+  padding: 15px;
+}
+
+.user-profile h2 {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+.user-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #fff;
+}
+
+.field {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.value {
+  color: #333;
+}
+
+.address {
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+.address div {
+  margin-bottom: 5px;
+}
+
+.hobbies {
+  margin: 5px 0 0;
+  padding-left: 20px;
+}
+
+.hobbies li {
+  margin-bottom: 5px;
+}
+

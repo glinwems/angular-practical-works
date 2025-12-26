@@ -1,0 +1,35 @@
+<div class="user-profile">
+  <h2>Профіль користувача</h2>
+  
+  <div class="user-card">
+    <div class="field">
+      <span class="label">ID:</span>
+      <span class="value">{{ user.id }}</span>
+    </div>
+    
+    <div class="field">
+      <span class="label">Ім'я:</span>
+      <span class="value">{{ user.name }}</span>
+    </div>
+    
+    <div class="field">
+      <span class="label">Статус:</span>
+      <span class="value">{{ user.status }}</span>
+    </div>
+    
+    <div class="field">
+      <span class="label">Адреса:</span>
+      <div class="address">
+        <div>Місто: {{ user.address.city }}</div>
+        <div>Вулиця: {{ user.address.street }}</div>
+      </div>
+    </div>
+    
+    <div class="field">
+      <span class="label">Хобі ({{ getHobbiesCount() }}):</span>
+      <ul class="hobbies">
+        <li *ngFor="let hobby of user.hobbies">{{ hobby }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
