@@ -1,0 +1,20 @@
+<div style="padding: 20px;">
+  <h2>Лабораторна 6</h2>
+  
+  <button (click)="loadData()" style="padding: 10px; margin-bottom: 15px; cursor: pointer;">
+    Отримати дані
+  </button>
+  
+  <div *ngIf="data.length > 0">
+    <h3>Отримані дані:</h3>
+    <ul>
+      <li *ngFor="let item of data">{{ item }}</li>
+    </ul>
+  </div>
+  
+  <p style="margin-top: 15px; color: #666;">
+    Перевірте консоль браузера для перегляду логів AnalyticsService.
+  </p>
+</div>
+
+<router-outlet />
