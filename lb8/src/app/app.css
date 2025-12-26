@@ -1,0 +1,62 @@
+/* Основной контейнер */
+.shell {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  color: #2c3e50;
+}
+
+/* Шапка */
+.header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Навигация */
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  position: relative;
+}
+
+.header nav a:hover {
+  color: #dce6f1;
+}
+
+.header nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  transition: width 0.2s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.header nav a:hover::after {
+  width: 100%;
+}
+
+/* Основная часть */
+main {
+  flex: 1;
+  padding: 30px 40px;
+  background-color: #fdfdfd;
+}
