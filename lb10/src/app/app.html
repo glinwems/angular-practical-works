@@ -1,0 +1,64 @@
+<div class="container">
+  <h1>Анкета користувача</h1>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Ім'я:</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        [class.error]="getNameError()"
+      />
+      <div class="error-message" *ngIf="getNameError()">
+        {{ getNameError() }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Навички:</label>
+      <div formArrayName="skills" class="skills-array">
+        <div
+          *ngFor="let skill of skills.controls; let i = index"
+          class="skill-item"
+        >
+          <input
+            type="text"
+            [formControlName]="i"
+            [class.error]="getSkillError(i)"
+            placeholder="Введіть навичку"
+          />
+          <button
+            type="button"
+            (click)="removeSkill(i)"
+            [disabled]="skills.length === 1"
+            class="btn-remove"
+          >
+            Видалити
+          </button>
+          <div class="error-message" *ngIf="getSkillError(i)">
+            {{ getSkillError(i) }}
+          </div>
+        </div>
+      </div>
+      <button type="button" (click)="addSkill()" class="btn-add">
+        Додати навичку
+      </button>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="userForm.invalid" class="btn-submit">
+        Відправити
+      </button>
+      <button type="button" (click)="resetForm()" class="btn-reset">
+        Очистити
+      </button>
+    </div>
+  </form>
+
+  <div class="info">
+    <p><strong>Статус форми:</strong> {{ userForm.valid ? 'Валідна' : 'Невалідна' }}</p>
+    <p><strong>Кількість навичок:</strong> {{ skills.length }}</p>
+  </div>
+</div>
+
