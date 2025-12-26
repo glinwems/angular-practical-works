@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>HTTP Interceptor - Демонстрація</h1>
+  
+  <p class="info">
+    Відкрийте DevTools (F12) → вкладка Network, щоб перевірити, що всі запити містять заголовок 
+    <strong>Authorization: Bearer MY_TOKEN</strong>
+  </p>
+
+  <div class="controls">
+    <button (click)="loadPosts()" [disabled]="loading">Завантажити пости</button>
+    <button (click)="loadUsers()" [disabled]="loading">Завантажити користувачів</button>
+    <button (click)="loadComments()" [disabled]="loading">Завантажити коментарі</button>
+    <button (click)="loadSinglePost()" [disabled]="loading">Завантажити один пост</button>
+    <button (click)="clearData()" [disabled]="loading">Очистити</button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Завантаження...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="posts.length > 0" class="section">
+    <h2>Пости ({{ posts.length }})</h2>
+    <ul>
+      <li *ngFor="let post of posts">
+        <strong>{{ post.title }}</strong> - {{ post.body.substring(0, 50) }}...
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="users.length > 0" class="section">
+    <h2>Користувачі ({{ users.length }})</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        <strong>{{ user.name }}</strong> ({{ user.email }})
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="comments.length > 0" class="section">
+    <h2>Коментарі ({{ comments.length }})</h2>
+    <ul>
+      <li *ngFor="let comment of comments">
+        <strong>{{ comment.name }}</strong>: {{ comment.body.substring(0, 50) }}...
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="singlePost" class="section">
+    <h2>Один пост</h2>
+    <div>
+      <strong>{{ singlePost.title }}</strong>
+      <p>{{ singlePost.body }}</p>
+    </div>
+  </div>
+</div>
+
