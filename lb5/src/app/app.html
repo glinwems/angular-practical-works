@@ -1,0 +1,17 @@
+<div style="padding: 20px;">
+  <h2>Демонстрація директиви configurableHighlight</h2>
+  
+  <p [configurableHighlight] [highlightColor]="'cyan'">
+    Колір суан.
+  </p>
+  
+  <div [configurableHighlight] [highlightColor]="'lightgreen'" style="padding: 15px; margin-top: 15px; border: 1px solid #ccc;">
+    світлозелений.
+  </div>
+  
+  <p [configurableHighlight] style="padding: 10px; margin-top: 15px;">
+    жовтий.
+  </p>
+</div>
+
+<router-outlet />
